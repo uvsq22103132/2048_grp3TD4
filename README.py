@@ -5,5 +5,5 @@
 # abdoul
 # https://github.com/uvsq-info/l1-python
 
-import tkinker as tk
+import tkinter as tk
 import random 
