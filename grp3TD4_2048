@@ -79,6 +79,10 @@ def Exit():
     """La partie est finie et le score s'affiche"""
     #les boutons deviennent inactifs
     #la somme de toutes les chiffres présents à ce moment est afficher
+    s = 0
+    for i in range(16):
+        s += int(input())
+    print("Le score est", s)
 
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
