@@ -27,15 +27,9 @@ def mettre_text():
         for j in range(0,4):
             random = rd.randint(0,9)
             cpt =+ 1
-<<<<<<< HEAD
             if random < 1 > 0.1 :
                 canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
             if random < 1 < 0.1 :
-=======
-            if random < 1 > 0.1:
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
-            if random < 1 < 0.1:
->>>>>>> 36e50630239496e4fcb9ef050dafee4097b0e164
                 canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
             else:
                 canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
@@ -85,7 +79,6 @@ def Exit():
     """La partie est finie et le score s'affiche"""
     #les boutons deviennent inactifs
     #la somme de toutes les chiffres présents à ce moment est afficher
-<<<<<<< HEAD
     s = 0
     for i in range(16):
         s += int(input())
@@ -94,12 +87,6 @@ def Exit():
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
     fic=open("partie.txt", "w+")
-=======
-
-def Save():
-    """La partie en cours est sauvegardée dans un fichier texte"""
-
->>>>>>> 36e50630239496e4fcb9ef050dafee4097b0e164
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
 
@@ -112,7 +99,6 @@ bouton_up = tk.Button(text="Up", command=Up)
 bouton_exit = tk.Button(text="Exit", command=Exit)
 bouton_save = tk.Button(text="Save", command=Save)
 bouton_load = tk.Button(text="Load", command=Load)
-<<<<<<< HEAD
 
 #positionnement des wigdets
 
@@ -126,8 +112,6 @@ bouton_exit.grid(column = 15, row = 1)
 bouton_save.grid(column = 16, row = 1)
 bouton_load.grid(column = 17, row = 1)
 
-=======
->>>>>>> 36e50630239496e4fcb9ef050dafee4097b0e164
 
 canvas.grid(column = 20, row = 1)
 bouton_play.grid(column = 10, row = 1)
