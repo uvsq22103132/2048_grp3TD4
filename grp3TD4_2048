@@ -86,7 +86,7 @@ def Exit():
 
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
-
+    fic=open("partie.txt", "w+")
 
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
