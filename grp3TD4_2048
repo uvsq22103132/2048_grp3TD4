@@ -20,19 +20,20 @@ compteurI = 0
 racine = tk.Tk()
 racine.title("2048")
 canvas = tk.Canvas(racine, bg = "white", width = l, height = h)
-canvas.grid()
+canvas.grid(column = 20, row = 1)
 
 def mettre_text():
-    for i in range(0,4):
-        for j in range(0,4):
+    for i in range(4):
+        for j in range(4):
             random = rd.randint(0,9)
             cpt =+ 1
             if random < 1 > 0.1 :
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
-            if random < 1 < 0.1 :
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
+                text2 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
+            if random < 1 < 0.1:
+                text4 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
             else:
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
+                text = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
+
 
 
 def create_grille():
