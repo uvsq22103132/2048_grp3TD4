@@ -20,19 +20,20 @@ compteurI = 0
 racine = tk.Tk()
 racine.title("2048")
 canvas = tk.Canvas(racine, bg = "white", width = l, height = h)
-canvas.grid()
+canvas.grid(column = 20, row = 1)
 
 def mettre_text():
-    for i in range(0,4):
-        for j in range(0,4):
+    for i in range(4):
+        for j in range(4):
             random = rd.randint(0,9)
             cpt =+ 1
             if random < 1 > 0.1 :
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
-            if random < 1 < 0.1 :
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
+                text2 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
+            if random < 1 < 0.1:
+                text4 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
             else:
-                canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
+                text = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
+
 
 
 def create_grille():
@@ -40,7 +41,13 @@ def create_grille():
         for j in range(0, 4):
             cpt2=+1
             canvas.create_rectangle(grille + 200*i, grille + 200*j, grille + 200*(i+1), grille +200*(j+1))
-    
+
+def Play():
+    """La partie commence"""
+    #deux tuiles apparaissent aléatoirement sur la grille
+    #id_after
+    #une tuile ne peut pas apparaître sur une case déjà prise
+    mettre_text()
 
 def Left():
     """Les tuiles d'une ligne s'empilent vers la gauche"""
@@ -78,46 +85,48 @@ def Exit():
     for i in range(16):
         s += int(input())
     print("Le score est", s)
+    
 
+
+    
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
     fic=open("partie.txt", "w+")
+    fic.close()
 
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
+    fic=open("partie.txt","r")
+    fic = canvas.grid()
 
-def Play():
-    """La partie commence"""
-    #deux tuiles apparaissent aléatoirement sur la grille
-    #id_after
-    #une tuile ne peut pas apparaître sur une case déjà prise
-    bouton_left = tk.Button(text="Left", command=Left)
-    bouton_right = tk.Button(text="Right", command=Right)
-    bouton_down = tk.Button(text="Down", command=Down)
-    bouton_up = tk.Button(text="Up", command=Up)
-    bouton_exit = tk.Button(text="Exit", command=Exit)
-    bouton_save = tk.Button(text="Save", command=Save)
-    bouton_load = tk.Button(text="Load", command=Load)
-    bouton_left.grid(column = 11, row = 2)
-    bouton_right.grid(column = 12, row = 3)
-    bouton_down.grid(column = 13, row = 4)
-    bouton_up.grid(column = 14, row = 5)
-    bouton_exit.grid(column = 15, row = 6)
-    bouton_save.grid(column = 16, row = 7)
-    bouton_load.grid(column = 17, row = 8)
-    mettre_text()
 
+#création des widgets
 
 bouton_play = tk.Button(text="Play", command=Play)
+bouton_left = tk.Button(text="Left", command=Left)
+bouton_right = tk.Button(text="Right", command=Right)
+bouton_down = tk.Button(text="Down", command=Down)
+bouton_up = tk.Button(text="Up", command=Up)
+bouton_exit = tk.Button(text="Exit", command=Exit)
+bouton_save = tk.Button(text="Save", command=Save)
+bouton_load = tk.Button(text="Load", command=Load)
 
+
+
+#positionnement des widgets
+
+bouton_play.grid(column = 10, row = 1)
+bouton_left.grid(column = 11, row = 1)
+bouton_right.grid(column = 12, row = 1)
+bouton_down.grid(column = 13, row = 1)
+bouton_up.grid(column = 14, row = 1)
+bouton_exit.grid(column = 15, row = 1)
+bouton_save.grid(column = 16, row = 1)
+bouton_load.grid(column = 17, row = 1)
+
+create_grille()
 #positionnement des wigdets
 
-canvas.grid(column = 20, row = 1)
-bouton_play.grid(column = 10, row = 1)
-
-
-canvas.grid(column = 20, row = 1)
-bouton_play.grid(column = 10, row = 1)
 
 create_grille()
 racine.mainloop()
