@@ -40,11 +40,6 @@ def create_grille():
         for j in range(0, 4):
             cpt2=+1
             canvas.create_rectangle(grille + 200*i, grille + 200*j, grille + 200*(i+1), grille +200*(j+1))
-
-def Play():
-    """La partie commence"""
-    #deux tuiles apparaissent aléatoirement sur la grille
-    mettre_text()
     
 
 def Left():
