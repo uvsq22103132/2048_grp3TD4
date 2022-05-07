@@ -1,4 +1,4 @@
-import tkinter as tk 
+import tkinter as tk
 import random as rd
 
 h = 1000
@@ -87,6 +87,7 @@ def Exit():
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
     fic=open("partie.txt", "w+")
+<<<<<<< HEAD
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
 
@@ -112,7 +113,41 @@ bouton_exit.grid(column = 15, row = 1)
 bouton_save.grid(column = 16, row = 1)
 bouton_load.grid(column = 17, row = 1)
 
+=======
+    
+def Load():
+    """Permet de charger une partie enregistrée dans un fichier"""
 
+def Play():
+    """La partie commence"""
+    #deux tuiles apparaissent aléatoirement sur la grille
+    #id_after
+    #une tuile ne peut pas apparaître sur une case déjà prise
+    bouton_left = tk.Button(text="Left", command=Left)
+    bouton_right = tk.Button(text="Right", command=Right)
+    bouton_down = tk.Button(text="Down", command=Down)
+    bouton_up = tk.Button(text="Up", command=Up)
+    bouton_exit = tk.Button(text="Exit", command=Exit)
+    bouton_save = tk.Button(text="Save", command=Save)
+    bouton_load = tk.Button(text="Load", command=Load)
+    bouton_play.grid(column = 11, row = 1)
+    bouton_left.grid(column = 12, row = 1)
+    bouton_right.grid(column = 13, row = 1)
+    bouton_down.grid(column = 14, row = 1)
+    bouton_up.grid(column = 15, row = 1)
+    bouton_exit.grid(column = 16, row = 1)
+    bouton_save.grid(column = 17, row = 1)
+    bouton_load.grid(column = 18, row = 1)
+    mettre_text()
+
+
+bouton_play = tk.Button(text="Play", command=Play)
+
+#positionnement des wigdets
+>>>>>>> ad3bc2c599c5ac9c7e583f0a5f682cbaeb14bc9d
+
+canvas.grid(column = 20, row = 1)
+bouton_play.grid(column = 10, row = 1)
 
 create_grille()
 racine.mainloop()
