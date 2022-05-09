@@ -27,9 +27,9 @@ def mettre_text():
         for j in range(4):
             random = rd.randint(0,9)
             cpt =+ 1
-            if random < 1 > 0.1 :
+            if random > 1 :
                 text2 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 2)
-            if random < 1 < 0.1:
+            if random < 1 :
                 text4 = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = 4)
             else:
                 text = canvas.create_text(centre + 200*i, centre + 200*j, anchor ='center', text = "")
