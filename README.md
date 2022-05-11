@@ -224,6 +224,21 @@ def Save():
 
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
+    global matrice 
+    fic = open("partie_sauvegarde.text","r")
+    ligne = fic.readline()
+    matrice = int(ligne)
+    etat_du_jeu()
+    i = j = 0
+    for ligne in fic :
+        n = int(ligne)
+        create_grille[i][j] = n
+        j += 1
+        if j == 4 :
+            j = 0
+            i += 1
+    fic.close()
+    etat_du_jeu()
 
 
 def create_grille():
