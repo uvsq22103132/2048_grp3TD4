@@ -1,9 +1,13 @@
 # 2048_grp3TD4
+Importation des librairies utilisées
+
 import tkinter as tk 
 import random
 
-h = 1000
-l = 1000
+Définition des constantes
+
+h = 1000 -->Hauteur du canevas
+l = 1000 -->Largeur du canevas
 grille = 100
 zero_alea = 0
 jeu = 0
@@ -22,6 +26,7 @@ def creer_matrice():
 
 
 def Play():
+#deux tuiles apparaissent aléatoirement sur la grille
     """La partie commence"""
     #deux tuiles apparaissent aléatoirement sur la grille
     global matrice
