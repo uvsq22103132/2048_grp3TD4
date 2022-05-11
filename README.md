@@ -1,4 +1,6 @@
 # 2048_grp3TD4
+ROYERE    MANON, JOSEPH GABRIEL, ROMERO CHLOE, SULEIMAN ABDUL MALIK, projet 2048
+
 1/Importation des librairies utilisées
 
 -import tkinter as tk 
