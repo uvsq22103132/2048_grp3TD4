@@ -219,7 +219,7 @@ def Exit():
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
     N = 4
-    fic=open("enregistrement.txt", "w")
+    fic=open("partie_sauvegarde.txt", "w")
     fic.write(str(matrice) + "\n")
     for i in range(N):
         for j in range(N):
@@ -230,7 +230,7 @@ def Save():
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
     global matrice 
-    fic = open("partie_sauvegarde.text","r")
+    fic = open("partie_sauvegarde.txt","r")
     ligne = fic.readline()
     matrice = int(ligne)
     etat_du_jeu()
