@@ -26,6 +26,7 @@ def creer_matrice():
 
 
 def Play():
+#deux tuiles apparaissent aléatoirement sur la grille
     """La partie commence"""
     #deux tuiles apparaissent aléatoirement sur la grille
     global matrice
