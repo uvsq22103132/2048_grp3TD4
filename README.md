@@ -1,23 +1,24 @@
 # 2048_grp3TD4
-Importation des librairies utilisées
+1/Importation des librairies utilisées
 
-import tkinter as tk 
-import random
+-import tkinter as tk 
+-import random
 
-Définition des constantes
+2/Définition des constantes
 
-h = 1000 -->Hauteur du canevas
-l = 1000 -->Largeur du canevas
-grille = 100
-zero_alea = 0
-jeu = 0
-rand = 0
-centre = 200
-matrice = [[0, 0, 0, 0],
+-h = 1000 -->Hauteur du canevas
+-l = 1000 -->Largeur du canevas
+-grille = 100
+-zero_alea = 0
+-jeu = 0
+-rand = 0
+-centre = 200
+-matrice = [[0, 0, 0, 0],
            [0, 0, 0, 0],
            [0, 0, 0, 0],
            [0, 0, 0, 0]]
 
+3/Création des fonctions
 
 def creer_matrice():
     for i in range(4):
@@ -47,7 +48,7 @@ def Play():
 
 
 
-def etat_du_jeu(matrice):
+def etat_du_jeu(matrice): -Met la matrice à jour
     global jeu
     for i in range(4):
         for j in range(4):
@@ -81,7 +82,7 @@ def etat_du_jeu(matrice):
     else : 
         jeu == True
 
-def generation_alea(matrice):
+def generation_alea(matrice):-Génère deux nombres aléatoire (2 et/ou sur la matrice
     rand = random.randint(0,9)
     if rand < 1:
         rand1 = random.randint(0, 3)
@@ -99,7 +100,7 @@ def generation_alea(matrice):
         matrice[rand1][rand2] = 2
 
 
-def generation_de_text(matrice):
+def generation_de_text(matrice):-Si une condition particulière est rempli alors le texte associé créé
     for r in range(0, 3):
         for c in range(0, 3):
             if matrice[r][c] == 0 :
@@ -130,7 +131,7 @@ def generation_de_text(matrice):
 
 
 
-def Left():
+def Left():-Mouvement à gauche,la matrice change si il y a un 0 ou si deux cases contenant le même chiffre sont côte-à-côte(celle le plus à gauche voit sa valeur doubler tandis que l'autre repasse à la valeur 0
     global matrice, canvas
     for r in range(4):
         while 0 in matrice[r]:
@@ -152,7 +153,7 @@ def Left():
 
 
 
-def Right():
+def Right():-Mouvement à droite, la matrice change si il y a un 0 ou si deux cases contenant le même chiffre sont côte-à-côte(celle le plus à droite voit sa valeur doubler tandis que l'autre repasse à la valeur 0
     global matrice
     for r in range(4):
         while 0 in matrice[r]:
@@ -172,7 +173,7 @@ def Right():
         generation_de_text(matrice)
 
 
-def Up():
+def Up():-Mouvement en bas, la matrice change si il y a un 0 ou si deux cases contenant le même chiffre sont côte-à-côte(celle le plus en bas voit sa valeur doubler tandis que l'autre repasse à la valeur 0
     global matrice
     for c in range(4):
         while 0 in matrice[c]:
@@ -192,7 +193,7 @@ def Up():
             generation_de_text(matrice)
 
 
-def Down():
+def Down():-Mouvement en haut, la matrice change si il y a un 0 ou si deux cases contenant le même chiffre sont côte-à-côte(celle le plus en haut voit sa valeur doubler tandis que l'autre repasse à la valeur 0
     global matrice
     for c in range(4): 
         while 0 in matrice[c]:
@@ -212,7 +213,7 @@ def Down():
         generation_de_text(matrice)
 
 
-def Exit():
+def Exit():-L'utilisateur rentre les 16 chiffres contenus dans la matrice au moment de la fin de la partie dans le terminal, à terme le programme additionne est renvoie le score
     """La partie est finie et le score s'affiche"""
     #les boutons deviennent inactifsgrille
     #la somme de toutes les chiffres présents à ce moment est afficher
@@ -222,9 +223,15 @@ def Exit():
     print("Le score est", s)
 
 
-def Save():
+def Save():-Création d'un fichier texte et sauvegarde de la partie à l'intérieur
     """La partie en cours est sauvegardée dans un fichier texte"""
-    fic=open("partie.txt", "w+")
+    N = 4
+    fic=open("enregistrement.txt", "w")
+    fic.write(str(matrice) + "\n")
+    for i in range(N):
+        for j in range(N):
+            fic.write(str(matrice[i][j]) + "\n")
+    fic.close()
 
 
 def Load():
@@ -246,7 +253,7 @@ def Load():
     etat_du_jeu()
 
 
-def create_grille():
+def create_grille():-La grille est créée
     for i in range(0, 4):
         for j in range(0, 4):
             cpt2=+1
@@ -261,6 +268,7 @@ racine.title("2048")
 canvas = tk.Canvas(racine, bg = "white", width = l, height = h)
 canvas.grid()
 
+-Création du canvas et des boutons
 bouton_play = tk.Button(text="Play", command=Play)
 bouton_left = tk.Button(text="Left", command=Left)
 bouton_right = tk.Button(text="Right", command=Right)
@@ -271,17 +279,6 @@ bouton_save = tk.Button(text="Save", command=Save)
 bouton_load = tk.Button(text="Load", command=Load)
 
 #positionnement des wigdets
-
-canvas.grid(column = 20, row = 1)
-bouton_play.grid(column = 10, row = 1)
-bouton_left.grid(column = 11, row = 1)
-bouton_right.grid(column = 12, row = 1)
-bouton_down.grid(column = 13, row = 1)
-bouton_up.grid(column = 14, row = 1)
-bouton_exit.grid(column = 15, row = 1)
-bouton_save.grid(column = 16, row = 1)
-bouton_load.grid(column = 17, row = 1)
-
 
 canvas.grid(column = 20, row = 1)
 bouton_play.grid(column = 10, row = 1)
