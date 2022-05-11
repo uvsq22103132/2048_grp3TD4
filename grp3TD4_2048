@@ -219,16 +219,32 @@ def Exit():
 
 def Save():
     """La partie en cours est sauvegardée dans un fichier texte"""
+    N = 4
     fic=open("enregistrement.txt", "w")
     fic.write(str(matrice) + "\n")
-    for i in range(matrice):
-        for j in range(matrice):
-            fic.write(str(matrice) + "\n")
+    for i in range(N):
+        for j in range(N):
+            fic.write(str(matrice[i][j]) + "\n")
     fic.close()
 
 
 def Load():
     """Permet de charger une partie enregistrée dans un fichier"""
+    global matrice 
+    fic = open("partie_sauvegarde.text","r")
+    ligne = fic.readline()
+    matrice = int(ligne)
+    etat_du_jeu()
+    i = j = 0
+    for ligne in fic :
+        n = int(ligne)
+        create_grille[i][j] = n
+        j += 1
+        if j == 4 :
+            j = 0
+            i += 1
+    fic.close()
+    etat_du_jeu()
 
 
 def create_grille():
