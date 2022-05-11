@@ -1,5 +1,7 @@
 # 2048_grp3TD4
 ROYERE    MANON, JOSEPH GABRIEL, ROMERO CHLOE, SULEIMAN ABDUL MALIK, projet 2048
+Lien github du prjet:
+2048_grp3TD4/grp3TD4_2048 at main • uvsq22103132/2048_grp3TD4 (github.com)
 
 1/Importation des librairies utilisées
 
